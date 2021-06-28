@@ -1,0 +1,41 @@
+\usepackage[margin=1in,letterpaper]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}[theorem]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\newtheoremstyle{break}
+  {}%
+  {}%
+  {\itshape}
+  {}%
+  {\bfseries}
+  {}%
+  {\newline}%
+  {}%
+
+\theoremstyle{break}
+\newtheorem{remark}{Remark}
+
+\usepackage[parfill]{parskip}
+\usepackage{bm}
+\usepackage[flushleft]{threeparttable}
+
+\usepackage{comment}
+\usepackage{cite}
+\usepackage[final]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  filecolor=magenta,
+  urlcolor=blue
+}

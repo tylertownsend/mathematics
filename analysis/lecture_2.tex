@@ -1,0 +1,238 @@
+\documentclass[a4paper, 11pt]{article}
+\input{../preamble.tex}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
+
+\title{Completeness Axiom}
+
+\begin{document}
+
+\tableofcontents
+
+\section{Power Inequality}
+\begin{theorem}[Power Inequality]
+For every $n \in \N$ and $x, y \in \R$ if $0 \leq x < y$, then $0 \leq x^{n} < y^{n}$
+\end{theorem}
+
+To prove this let us start with a lemma.
+\begin{lemma}
+Suppose $a, b, c \in \R$. If $a < b$ and $c > 0$, then $ac < bc$.
+\end{lemma}
+\begin{proof}
+Suppose towards a contradiction that $ac = bc$. Then by the equality we require $bc \leq ac$. Since we have $c > 0$, then $c^{-1} > 0$. Then we have
+\begin{equation*}
+  b = bcc^{-1} \leq acc^{-1} = a
+\end{equation*}
+which contradicts the assumption that $a < b$.
+\end{proof}
+
+\begin{proof}
+Let $P(n):$ for all $x, y \in \R$, if $0 \leq x < y$, then $x^{n} < y^{n}$.
+
+\textbf{Base Case}\newline
+Take $P(1): 0 \leq x < y$ which implies $0 \leq x^1 < y^1$. Which is true based on the given relationship of $x$ and $y$.
+
+\textbf{Inductive Step}\newline
+Suppose $P(n)$ holds, that is $\forall x, y, \in \R$, if $0\leq x < y$, then $0 \leq x^n < y^n$. Let $x, y \in R$, $0\leq x < y$.
+Then 
+\begin{align*}
+  x^{n+1} &= x^n \cdot x \leq x^n \cdot y &\text{(using $x < y$, and $0 \leq x^n$)} \\
+  &<y^n = y^{n+1} \cdot y &\text{(by the claim using $x^n < y^n$ and $0 < y$)}
+\end{align*}
+This then implies $x^{n+1} < y^{n+1}$ (1). Finally, since $0 \leq x^n$, and $0 \leq x$, then $0 \leq x^{n+1}$ (2). Taking these two (1 and 2)
+we have the desired result.
+
+\end{proof}
+
+\section{The Real Numbers and the Completeness Axiom}
+Let $S \subseteq \R$, where $S \neq \emptyset$.
+
+\begin{enumerate}
+  \item The largest element of $S$ (if there is one), is called the \textit{maximum of S}, $\max S$
+  \item The least element of $S$ (if there is one), is called the \textit{minimum of S}, $\min S$
+\end{enumerate}
+
+\begin{example}
+Every finite non-empty $S \subseteq \R$ has a maximum and minimum.
+\end{example}
+
+\begin{example}
+Let $a < b \in \R$. Then consider the closed interval
+\begin{align*}
+  [a, b] = \lbrace x \in \R: a \leq x \leq b \rbrace
+\end{align*}
+has minimum $\min [a, b] = a$ and maximum $\max [a, b] = b$.
+\end{example}
+
+\begin{example}
+The open interval
+\begin{align*}
+  (a, b) = \lbrace x \in \R: a < x < b \rbrace
+\end{align*}
+has neither a max nor a min.
+\end{example}
+
+\begin{example}
+$\Z, \Q, \subseteq \R$ do not have a min or max. Consider $a \in \Z$. Then there exists and $a + 1 \in \Z$ hence there is no max.
+Conversely the same arg for min.
+\end{example}
+
+\begin{definition}[Bounds]
+Let $S \subseteq \R$ where $S \neq \emptyset$.
+\begin{enumerate}
+  \item We call $M \in \R$ \textbf{an upper bound for} $S$ if $M \geq S$ for all $s \in S$.
+  \item We call $m \in \R$ \textbf{a lower bound for} $S$ if $m \leq S$ for all $s \in S$.
+  \item We say that $S$ is bounded if $S$ is bounded from above and from below.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+The max of a set (if it exists) is an upper bound. The min of a set (if it exists) is a lower bound.
+\end{example}
+
+\begin{example}
+Let $a < b \in \R$ then $a$ is a lower bound for $[a, b]$ and $(a, b)$. $b$ is an upper bound for
+both sets as well.
+\end{example}
+
+\begin{example}
+Neith of the set $\Z$ or $\Q$ are bounded from below or above.
+\end{example}
+
+\begin{definition}
+Let $S \subseteq \R$ where $S \neq \emptyset$.
+\begin{enumerate}
+  \item If $S$ is bounded from above and has a least upper bound, $s_0$, then $s_0$ is the
+  \textbf{supremum} of $S$, $s_0=\sup S$.
+  \item If $S$ is bounded from below and has a greatest lower bound, $s_1$, then $s_1$ is the
+  \textbf{infinum} of $S$, $s_1=\inf S$.
+\end{enumerate}
+
+\begin{remark}
+  \begin{enumerate}
+    \item Every $S \subseteq \R, S\neq \emptyset$, can have a most one supremum and one infinum.
+    \item If $S \subseteq \R$ has a max, then $\max S = \sup S$.
+    \item The following are equivalent:
+    \begin{itemize}
+      \item $s_0 = \sup S$
+      \item $s_0 \geq s \forall s \in S$, and if $s_1 \geq s \forall s \in S,$ then $s_1 \geq s_0$
+      \item $s_0 \geq s \forall s \in S$, and if $s_1 < s_0$, then $s_1 < s$ for some $s \in S$.
+    \end{itemize}
+  \end{enumerate}
+\end{remark}
+\end{definition}
+
+\begin{example}
+For $a < b \in \R$,
+\begin{enumerate}
+  \item $\sup[a, b] = \sup(a, b) = b$
+  \item $\inf[a, b] = \inf(a, b) = a$
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Let $A = \lbrace \frac{1}{n^{2}}: n \in \N, n\geq 3  \rbrace$ A is bounded from above and from below.
+$\max A = 1 / 3$, however is there is no minimum.
+
+\begin{enumerate}
+  \item $\inf A = 0$. $A$ is the set of values where each value is equivalent to $1/n^2$ for values of 
+  $n\geq 3$. So we can choose $n$ to be sufficiently large. Because $n \rightarrow \infty$,
+  $\frac{1}{n^2} \rightarrow 0$. So we know that 0 is the greatest lowerbound.
+  \item $\sup A = \max A = 1/3$
+\end{enumerate}
+\end{example}
+
+\begin{definition}[Completeness Axiom]
+Every non-empty subset of $\R$ which is bounded from above has a least upper bound. This is equivalent
+to: Given $S \subseteq \R$, $S \neq \emptyset$, if $S$ has at least one upper bound, then $\sup S$, exists.
+\end{definition}
+
+\begin{remark}
+The Completeness Axiom failes for $\Q$.
+\begin{align*}
+  A &= \lbrace r \in \Q: 0 \leq r \text{ and } r^2 \leq 2 \rbrace \\
+  &= \lbrace r \in \Q: 0 \leq r \leq \sqrt{2} \rbrace 
+\end{align*}
+\end{remark}
+$A$ is bounded from above (e.g. $\frac{3}{2}$ is an upper bound), but the $\sup A = \sqrt{2}\not\in \Q$.
+
+\begin{corollary}
+Every $\emptyset \neq S \subseteq \R$ that is bounded from below has a greatest lower bound $\inf S$
+\end{corollary}
+
+\begin{proof}
+Given $S \subseteq \R$, let $-S = \lbrace -s: s \in S \rbrace$. Given that S is bounded below, $\exists m\in \R$
+such that $m \leq s$ for $s \in S$. This implies that $-m \geq -s$ for all $s \in S$.
+
+So $-m \geq u, \, \forall u \in -S$. Thus $-S$ is bounded from above by $-m$. By the Completeness Axiom for
+$-S$, the $\sup -S$ exists.
+
+Let $s_0 = \sup -S$. What we need to show is that 
+\begin{enumerate}
+  \item $-s_0$ is a lower bound of $S$($-s_0 \leq s, \, \forall s \in S$)
+  \item $-s_0$ is the greatest lower bound (if $t \leq s, \, \forall s \in S$ then $t \leq -s_0$)
+\end{enumerate}.
+
+We take $s_0 \geq -s$ for all $s \in S$. And this implies the condition (1) by multiply both sides
+by -1.
+
+For the second part assume $t \leq s, \, \forall s \in S$. This is equivalent to 
+\begin{align*}
+  &-t \geq -s, \, \forall s \in S\\
+  \implies &-t \geq u, \forall u \in -S\\
+  \implies &-t \geq s_0 \\
+  \implies &t \leq s_0
+\end{align*}
+\end{proof}
+
+\subsection{What is $\R$}
+$\R$ is a number system containing $\Q$ and satisfying the Completeness Axiom.
+
+\begin{definition}[Archimedian Property]
+The following properties of $\R$ hold.
+\begin{enumerate}
+  \item For every positive real number $a > 0$, there is a natural number $n$ such that $n > a$.
+  \item For every $a, b > 0$ in $\R$, there is an $n \in \N$ such that $n\cdot a > b$
+  \item For every $\epsilon > 0 \in \R$ there is an $n \in \N$ such that $\frac{1}{n} < \epsilon$
+\end{enumerate}
+\end{definition}
+
+\begin{proof}
+\begin{enumerate}
+  \item Assume towards contradiction that $\exists a > 0 \in \R$ such that $a \geq n$ for every $n \in \N$.
+  Thus $a$ is an upper bound for $\N \subseteq \R$. By the completeness axiom, there exist some $b \in \R$
+  such that $b = \sup \N$. As $b$ is the least upper bound of the set $\N$ the number $b - 1/2$ is
+  not an upper bound for $\N$. In particular, $\exists n \in \N$ such that $n > b - \frac{1}{2}$.
+  This implies that $n + 1 > b - \frac{1}{2} + 1 > b$. However, this says that $b \neq \sup N$,
+  which is a contradiction.
+  \item Suppose $a, b > 0$, in particular $\frac{b}{a} > 0$. By the first property, $\exists n\in \N$ such that $n > \frac{b}{a}$. This rearanging, $n\cdot a > b$.
+  \item Suppose $\epsilon > 0, \, \epsilon \in \R$. Then $\frac{1}{\epsilon} > 0$. By (1) $\exists n \in \N$ such that math $n > \frac{1}{\epsilon}$. Rearanging, we can get $\epsilon > \frac{1}{n}$.
+\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+  Suppose $a < b \in \R$ and $b - a > 1$. Then there is an integer $m$ such that $a < m < b$.
+\end{corollary}
+
+\begin{proof}
+  By the Archimedian Property, $\exists k > \max (|a|, |b|)$. Then we know that $-k < a < b < k$. Let the sets $K = \lbrace j \in \Z: -k \leq j \leq k \rbrace$ and $K' = \lbrace j \in \Z: a \leq j \rbrace$ such that both $K, K'$ are finite and non empty as $k \in K'  \subseteq K$.
+\end{proof}
+
+\begin{theorem}[Density of $\Q$ in $\R$]
+For every real numbers $a,b\in \R$ with $a<b$, $\exists r \in Q)$ such that $a < r < b$
+\end{theorem}
+
+\begin{proof}
+  We need to find a quotient of integers, $m, n \in \Z$ such that $n > 0$ and
+  \begin{align*}
+    a < \frac{m}{n} < b
+  \end{align*}
+  We need to choose $n$ such that the demoniator is large enough so that consecutive increments of $1/n$ are too close to step over in the interval $(a, b)$.
+
+  Using the Archimedean Property we may pick $\frac{1}{n} < \epsilon$ where $\epsilon = b - a$. 
+\end{proof}
+
+\end{document}
