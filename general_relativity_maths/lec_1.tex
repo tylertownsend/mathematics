@@ -1,0 +1,119 @@
+\documentclass[a4paper, 11pt]{article}
+\input{../preamble.tex}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Otop}{\mathcal{O}}
+\DeclareMathOperator{\Pset}{\mathcal{P}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
+
+\title{Topology}
+
+\begin{document}
+
+\tableofcontents
+
+\section{Introduction}
+The Physical key definition underlying all modern physics.
+
+\begin{center}
+\fbox{%
+  \parbox{0.9\textwidth}{%
+  Spacetime is a four - \underline{dimensional} \underline{topological} \underline{manifold}
+  with a \underline{smooth atlas} carrying a \underline{torsion-free}
+  \underline{connection} compatible with a \underline{Lorentzian metric}
+  and a \underline{time orientation} satisfying the \underline{Einstien Equations}
+}}
+\end{center}
+
+\section{Topological Spaces}
+Want to talk about space time and at the coarsest level, space time is a set. Each point is an element
+of the set. However, this set is not enough to talk about continuity of maps.
+
+Why as Physicist why do we want to talk about maps. In classical physics, curves do not jump. Particles
+move along curves with no jumps. Structures on the set allows you to talk about the set.
+
+Intrested in the Weakest structure we can establish on set which allows a good definition of continuitiy
+of maps. As mathematicians we can establish the weakest structure on a set called a \textbf{topology}.
+
+\begin{definition}{Topology}
+  Let $M$ be a set. A topology $\Otop \subseteq \Pset(M)$ where $\Pset(M)$ is the power set of $M$. So you make a choice
+  of sets to be be in $\Otop$. These should satisfy:
+  \begin{enumerate}
+    \item $\emptyset \in \Otop$ is required and $M \in \Otop$
+    \item Let $U\in \Otop$ and $V \in \Otop$. Then the intersection of them is in $\Otop, \, U \bigcap V \in \Otop$.
+    \item Assume $U_\alpha \in \Otop$ $\bigcup_{\alpha \in A} U_{\alpha} \in \Otop$
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+  \item $M = \{1, 2, 3\}$, $\Otop_1 = \{ \emptyset, \{1, 2, 3\} \}$ is a topology.
+  \begin{itemize}
+    \item The empty set is in $\Otop$ and $M \in \Otop$ so (1) qualifies.
+    \item The intersection of both sets is the empty set so (2) checks out.
+    \item The union of all sets is just (2) so (3) checks out.
+  \end{itemize}
+  \item $M = \{1, 2, 3\}$, $\Otop_2 = \{ \emptyset,\{1 \},\{ 2 \} \{1, 2, 3\} \}$ is not a topology.
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Let $M$ be any set. Then
+\begin{enumerate}
+  \item The chaotic topology is defined as: \fbox{$\Otop_{chaotic} = \{\emptyset, M\}$}.
+  \item The discrete topology is defined as: \fbox{$\Otop_{discrete} = \{\emptyset, \Pset(M)\}$}
+\end{enumerate}
+\end{example}
+
+Why do we care about these? They are utterly useless :). They are extreme cases. The chaotic has the fewest possible 
+and the discrete topology has the most elements. They serve as test cases for topologies.
+
+There is a very important example which will help reconcile continuity, the standard topology.
+\begin{definition}{The Standard Topology}
+Let $M = \R^d = \R \times \R ... \times \R = \lbrace (p_1, ..., p_d): p_i \in \R \rbrace$. The standard topology is
+$\Otop_{standard} \subseteq \Pset(\R^d)$.
+
+The standard topology contains non-countable many elements. So we define
+\begin{enumerate}
+  \item The \textbf{softball}, $B_r(p)$, where $r \in \R^+$ and $p \in \R^d$ where 
+  $B_r(p) = \lbrace (q_1, ..., q_d): \sum_{i = 1}^{d}(q_i - p_i)^2 < r^2 \rbrace$. You can think of $r$ as the radius of the
+  ball and $p$ as the center of the ball. There is a softball for any $r$ and any $p$.
+  \item $U \in \Otop_{standard}$ implies that $\forall p\in U \exists r \in \R^{+}$ where $B_r(p) \subseteq U$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+
+\end{example}
+
+A simple exercies why the standard topology satisfies these three axioms.
+
+Eventually we are going to think of $M$ as points in spacetime. We defined topologies in order to define the continuitiy of maps.
+Topologies are chosen to provide structure.
+
+\section{Terminology}
+\begin{table}[htpb]
+  \centering
+  \caption{caption}
+  \begin{tabular}{ccc}
+    \hline
+    Symbol & Name & Definition \\
+    \hline 
+    $M$ & Set & (ZFC) \\
+    \hline
+    $\Otop$ & Topology & A set of open sets.\\
+    \hline
+    $(M, \Otop)$ & Topological Space & \\
+    \hline
+    $U\in \Otop, \, U \subseteq M$ & Open Set & \\
+    \hline
+    $M/A \in \Otop, \, A \subseteq M$ & Closed Set & \\
+  \end{tabular}
+\end{table}
+
+\section{Continous Maps}
+A map $f: M \rightarrow N$
+
+\end{document}
