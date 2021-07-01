@@ -66,14 +66,14 @@
     ]
   },
   "Subset LEQ": {
-    "prefix": "subleq",
+    "prefix": "subset",
     "body": [
       "$1 \\subseteq $2"
     ],
     "description": "Set one is a subset of Subset 2"
   },
   "Subset NLEQ": {
-    "prefix": "subnleq",
+    "prefix": "nsubset",
     "body": [
       "$1 \\subsetneq $2"
     ],
@@ -89,8 +89,48 @@
   "Inline Math": {
     "prefix": "math",
     "body": [
-      "$$1$",
+      "$${1:TM_SELECTED_TEXT}$",
     ],
     "description": "Create an inline math string"
+  },
+  "Box Border": {
+    "prefix": "fbox",
+    "body": [
+      "\\fbox{$1}",
+    ],
+    "description": "Create box border around text"
+  },
+  "Paragraph Box Border": {
+    "prefix": "color",
+    "body": [
+      "\\begin{center}",
+      "\\fbox{%",
+      "  \\parbox{0.95\\textwidth}{%",
+      "  $1",
+      "}}",
+      "\\end{center}"
+    ]
+  },
+  "Figure": {
+    "prefix": "bfigc",
+    "body": [
+      "\\begin{figure}[ht]",
+      "${1: \\caption{$2}}",
+      "\\includegraphics[width=${3|0.5\\linewidth|}]{$4}",
+      "\\centering",
+      "\\end{figure}"
+    ]
+  },
+  "Table": {
+    "prefix": "BTA",
+    "body": [
+      "\\begin{table}[${1:htpb}]",
+      "  \\centering",
+      "  \\caption{${2:caption}}",
+      "  \\begin{tabular}{${4:c}}",
+      "  $0${5/((?<=.)c|l|r)|./(?1: & )/g}",
+      "  \\end{tabular}",
+      "\\end{table}",
+    ]
   }
 }
