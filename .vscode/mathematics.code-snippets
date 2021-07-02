@@ -59,6 +59,14 @@
       "\\end{example}"
     ]
   },
+  "New Proposition": {
+    "prefix": "bprop",
+    "body": [
+      "\\begin{proposition}",
+      "$1",
+      "\\end{proposition}"
+    ]
+  },
   "Set Conditions": {
     "prefix": "setcond",
     "body": [
@@ -117,6 +125,12 @@
       "\\sum_{$1=0}^{\\infity}\\frac{x^{$1}}{{$1}!}"
     ]
   },
+  "Infinity": {
+    "prefix": "@inf",
+    "body": [
+      "\\infty"
+    ]
+  },
   "Box Border": {
     "prefix": "fbox",
     "body": [
@@ -155,6 +169,18 @@
       "  $0${5/((?<=.)c|l|r)|./(?1: & )/g}",
       "  \\end{tabular}",
       "\\end{table}",
+    ]
+  },
+  "Limit": {
+    "prefix": "lim",
+    "body": [
+      "\\lim_{$1\\rightarrow $2} \\left( $3 \\right)"
+    ]
+  },
+  "Paranthesis": {
+    "prefix": "@paran",
+    "body": [
+      "\\left($1\\right)"
     ]
   }
 }
