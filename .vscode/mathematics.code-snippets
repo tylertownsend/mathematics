@@ -59,6 +59,14 @@
       "\\end{example}"
     ]
   },
+  "New Proposition": {
+    "prefix": "bprop",
+    "body": [
+      "\\begin{proposition}",
+      "$1",
+      "\\end{proposition}"
+    ]
+  },
   "Set Conditions": {
     "prefix": "setcond",
     "body": [
@@ -92,6 +100,36 @@
       "$${1:TM_SELECTED_TEXT}$",
     ],
     "description": "Create an inline math string"
+  },
+  "Mapping": {
+    "prefix": "smap",
+    "body": [
+      "$1: $2 \\rightarrow $3"
+    ]
+  },
+  "Functional Mapping": {
+    "prefix": "fmap",
+    "body": [
+      "$1: $2 \\mapsto $3"
+    ]
+  },
+  "Sumation": {
+    "prefix": "sum",
+    "body": [
+      "\\sum_{$1=$2}^{$3}"
+    ]
+  },
+  "Exponential Sumation": {
+    "prefix": "expsum",
+    "body": [
+      "\\sum_{$1=0}^{\\infity}\\frac{x^{$1}}{{$1}!}"
+    ]
+  },
+  "Infinity": {
+    "prefix": "@inf",
+    "body": [
+      "\\infty"
+    ]
   },
   "Box Border": {
     "prefix": "fbox",
@@ -131,6 +169,18 @@
       "  $0${5/((?<=.)c|l|r)|./(?1: & )/g}",
       "  \\end{tabular}",
       "\\end{table}",
+    ]
+  },
+  "Limit": {
+    "prefix": "lim",
+    "body": [
+      "\\lim_{$1\\rightarrow $2} \\left( $3 \\right)"
+    ]
+  },
+  "Paranthesis": {
+    "prefix": "@paran",
+    "body": [
+      "\\left($1\\right)"
     ]
   }
 }

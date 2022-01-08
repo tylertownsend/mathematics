@@ -1,0 +1,77 @@
+\documentclass[a4paper, 11pt]{article}
+\input{../preamble.tex}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
+
+\title{The Exponential Function}
+
+\begin{document}
+
+\tableofcontents
+\section{The exponential Function}
+\begin{definition}[The exponential Function] 
+The function $\exp: \R \rightarrow \R$ is  is defined by $\sum_{n=0}^{\infty}\frac{x^{n}}{{n}!}$. 
+Let $\phi: \R \rightarrow \R$ defined by $\phi(x) = \lim_{n\rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n$.
+We wish t that $\phi = \exp$
+\end{definition}
+
+\begin{proposition}
+Let us fix $x \in \R$. Then:
+\begin{enumerate}
+  \item For every natural number $n > |x|$, then $\left(1 + \frac{x}{n}\right)^{n} < (1 - \frac{x}{n})^{-n}$
+  \begin{proof}
+    Suppose $n > |x|$. Then $0 \leq \frac{x^{2}}{n^{2}}<1$. Then using this fact,
+    consider the product 
+    \begin{align*}
+      \left(1 + \frac{x}{n}\right)^n \cdot \left(1 - \frac{x}{n}\right)^n
+      &= \left(\left(1 + \frac{x}{n}\right)\left(1 - \frac{x}{n}\right)\right)^n \\
+      &=\left(1 - \frac{x^2}{n^2}\right) \\
+      &<1
+    \end{align*}
+    This follows from multiplying both parts of the previous inequality by the same power. If we divide
+    both sides by $\left(1 - \frac{x}{n}\right)^n$, we conclude that $\left(1 + \frac{x}{n}\right)^n  < \left(1 - \frac{x}{n}\right)^{-n}$.
+    
+  \end{proof}
+  \item The sequence $\left(1 + \frac{x}{n}\right)^n$ for $n > |x|$ is strictly increasing.
+  \begin{proof}
+  Suppose $n > |x|$, we want to show that $(n + 1)$st element of the sequence is greather than the $n$th element of the sequence.
+
+  That is $\left(x + \frac{x}{n}\right)^n \leq \left(x + \frac{x}{n+1}\right)^{n + 1}$. The A + M inequality:
+  Assume that $n \geq2 $ and given $a_1, \dots a_n \in \R,$ $(a_1 \dots a_n)^{1/n} \leq \frac{a_1 + \dots a_n}{n}$.
+  Consider $a_1 = 1, a_2 = \left(1 + \frac{x}{n}\right), \dots a_{n+1} = \left(1 + \frac{x}{n}\right)$.
+  \end{proof}
+  \item The sequence $\left(1 - \frac{x}{n}\right)^{-n}$ for $n > |x|$ is strictly decreasing.
+  \item $\left(1 + \frac{x}{n}\right)^{n} - \left(1 - \frac{x}{n}\right)^{-n} \rightarrow 0$ as $n \rightarrow \infty$.
+  These two sequences approach each other from the left and right. 
+\end{enumerate}
+\end{proposition}
+
+By (2), (3), and (4) of the proposition for $n > |x|$, the sequence of the closed intervals,
+\begin{equation*}
+  \left[ \left(1 + \frac{x}{n}\right)^n, \left(1 - \frac{x}{n}\right)^{-n}\right]
+\end{equation*}
+is nested. By the \textbf{Nested Interval Lemma}, there is a unique real number contained in the intersection of all of these
+intervals. The common limit of the sequences of left endpoints and the sequence of right endpoints.
+
+This enables us to make the following defintion
+\begin{definition}
+Define the function $\phi: \R \rightarrow \R$  for each $x \in \R$ where
+\begin{equation}
+  \phi(x) = \lim_{n\rightarrow \infty} \left(1 + \frac{x}{n}\right)^n = \left(1 - \frac{x}{n}\right)^{-n}
+\end{equation}
+Note: $\phi(0) = 1$. We also define $e = \phi(1)$ as the \textbf{Euler's constant}.
+\end{definition}
+
+\begin{remark}{}
+  \begin{enumerate}
+    \item For every natural number $n \in \N$ such that $n > |x|$
+    \begin{equation}
+      \left(1 + \frac{x}{n}\right)^n \leq \phi(x) \leq \left(1 - \frac{x}{n}\right)^{-n}
+    \end{equation}
+    \item 
+  \end{enumerate}
+\end{remark}
+\end{document}
