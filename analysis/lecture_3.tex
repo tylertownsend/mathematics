@@ -1,4 +1,5 @@
 \documentclass[a4paper, 11pt]{article}
+
 \input{../preamble.tex}
 
 \DeclareMathOperator{\N}{\mathbb{N}}
@@ -11,6 +12,46 @@
 \begin{document}
 
 \section{Difference of Powers formula}
+Difference of Power is the generalization:
+\begin{align}
+  a^{n} - b^{n} &= (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + ab^{n - 2} + b ^{n - 1}) \\
+                &= (a - b) \sum_{k=0}^{n-1}a^{n- 1 - k }b ^{k}
+\end{align}
+
+where $\lbrace n : n \in \N n \text{ and } \geq 2 \rbrace$
+
+In fact, we can use this result to show an upper bound and lower bound for $b^{n} - a^{n}$. If $0 < a < b$
+then 
+\begin{equation}
+  (b - a)n a ^{n - 1} < b^{n} - a^{n} < (b - a)n b ^{n - 1}
+\end{equation}
+
+\begin{proof}
+We assume that (2) is true and we try to obtain the left hand side of (1). then
+\begin{align*}
+  (a - b)\sum_{k=0}^{n-1}a^{n-1-k}b^{k} &= a \sum_{k=0}^{n -1}a^{n-1-k}b^{k} - b \sum_{k=0}^{n-1}a^{n-1-k}b^{k} \\
+    &= \sum_{k=0}^{n -1}a^{n-k}b^{k} - \sum_{k=0}^{n-1}a^{n-1-k}b^{k+1} \\
+    &= a^{n} + \left( \sum_{k=1}^{n -1}a^{n-k}b^{k} - \sum_{k=0}^{n-2}a^{n-1-k}b^{k+1}  \right) - b^{n} \\
+    &= a^{n} - b^{n}
+\end{align*}
+
+So we are able to show the relation. Now we want to bound the for (3). We can do this by supposing 
+$0 < a < b \in \R$ and that (2) holds.
+
+To determine an upper bound, we replace a with b (since $b > a$). Multiply both sides of (2) by $-1$.
+\begin{align*}
+  (b - a)\sum_{k=0}^{n-1}b^{n-1-k}a^{k} &< (b - a) \sum_{k=0}^{n-1}b^{n-1-k}b^{k} \\
+    &= (b - a) \sum_{k=0}^{n-1}b^{n-1} \\
+    &= (b - a) n b^{n-1}
+\end{align*}
+
+So we see that $(b -a)nb ^{n-1}$ is an upper bound for $b^{n} - a^{n}$.
+
+Without loss of generality we assume the reverse. For a lower bound we do the same thing but replace $b$ with $a$.
+Then we see that $b^{n} - a^{n}$ can be bounded from below.
+
+\end{proof}
+
 \section{Bernoulli Inequality}
 \section{Every Real number has $n^{th}$ root for all natural numbers}
 \end{document}

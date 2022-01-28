@@ -1,0 +1,2 @@
+# Shortcuts
+Found out [source](https://cheatography.com/jcwinkler/cheat-sheets/latex-workshop-visual-studio-code/#:~:text=Inserting%20sections%20%20%20Prefix%20%20%20Enviro%C2%ADnment,%20%20subsection%20%203%20more%20rows%20)

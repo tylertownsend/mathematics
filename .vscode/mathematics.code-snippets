@@ -80,6 +80,13 @@
     ],
     "description": "Set one is a subset of Subset 2"
   },
+  "Power": {
+    "prefix": "pow",
+    "body": [
+      "$1^{$2}"
+    ],
+    "description": "Raise argument $1 to the power of $2"
+  },
   "Subset NLEQ": {
     "prefix": "nsubset",
     "body": [
@@ -182,5 +189,13 @@
     "body": [
       "\\left($1\\right)"
     ]
+  },
+  // Lecture 3
+  "Sum of Product of A^{}B^{n}": {
+    "prefix": "sum_k_ab",
+    "body": [
+      "\\sum_{k=$1}^{$2}a^{$3}b^{$4}"
+    ],
+    "description": "Summation of a product of a and b raised to the power of k",
   }
 }
